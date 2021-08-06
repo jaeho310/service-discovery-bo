@@ -58,7 +58,6 @@
       }
     },
     mounted: function () {
-      // axios.get('http://192.168.10.74:8080/api/v1/pod').then(res => { console.log(res.data) })
       axios.get('http://localhost:8080/api/v1/deploys', {
         params: {
           cluster_id: 'gn84rh5j1ibezbe7u5a48xeg1o',

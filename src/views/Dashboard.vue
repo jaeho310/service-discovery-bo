@@ -32,13 +32,58 @@
       </v-row>
       <v-row>
         <v-col>
-          <h1>1</h1>
+          <material-card
+            color="white"
+            full-header
+          >
+            <template #heading>
+              <line-chart></line-chart>
+            </template>
+            <v-card-text>
+                <div class="text-h4 font-weight-light">
+                  Pod List
+                </div>
+                <div class="text-caption">
+                  select your pod to monitor
+                </div>
+            </v-card-text>
+          </material-card>
         </v-col>
         <v-col>
-          <h1>2</h1>
+          <material-card
+            color="white"
+            full-header
+          >
+            <template #heading>
+              <line-chart></line-chart>
+            </template>
+            <v-card-text>
+                <div class="text-h4 font-weight-light">
+                  Pod List
+                </div>
+                <div class="text-caption">
+                  select your pod to monitor
+                </div>
+            </v-card-text>
+          </material-card>
         </v-col>
         <v-col>
-          <h1>3</h1>
+          <material-card
+            color="white"
+            full-header
+          >
+            <template #heading>
+              <line-chart></line-chart>
+            </template>
+            <v-card-text>
+                <div class="text-h4 font-weight-light">
+                  Pod List
+                </div>
+                <div class="text-caption">
+                  select your pod to monitor
+                </div>
+            </v-card-text>
+          </material-card>
         </v-col>
         <!-- <v-col
           v-for="(chart, i) in charts"
@@ -85,6 +130,7 @@
   // Utilities
   import { get } from 'vuex-pathify'
   import Vue from 'vue'
+  import LineChart from '@/views/LineChart'
 
   const lineSmooth = Vue.chartist.Interpolation.cardinal({
     tension: 0,
@@ -92,7 +138,9 @@
 
   export default {
     name: 'DashboardView',
-
+    components: {
+      LineChart,
+    },
     data: () => ({
       charts: [{
         type: 'Bar',
@@ -215,10 +263,10 @@
     }),
 
     computed: {
-      sales: get('sales/sales'),
-      totalSales () {
-        return this.sales.reduce((acc, val) => acc + val.salesInM, 0)
-      },
+      // sales: get('sales/sales'),
+      // totalSales () {
+      //   return this.sales.reduce((acc, val) => acc + val.salesInM, 0)
+      // },
     },
   }
 </script>
